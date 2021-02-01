@@ -190,7 +190,7 @@ class Evaluator:
             pnts = (list(pos_index[np.random.randint(0, len(pos_index), num_sampled_pnts)]) + 
                 list(neg_index[np.random.randint(0, len(neg_index), num_sampled_pnts)]))
             pred_vec = pred_vec[pnts, 0]
-            ref_vec = ref_vec[pnts, 0]
+            ref_vec = ref_vec[pnts, 0] 
 
         F1 = (smp.utils.metrics.Fscore()(pred_vec, ref_vec)).cpu().detach().numpy()
         P = (smp.utils.metrics.Precision()(pred_vec, ref_vec)).cpu().detach().numpy()

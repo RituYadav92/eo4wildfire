@@ -249,7 +249,7 @@ class SegModel:
                     # torch.save(self.model.state_dict(), self.model_url)
                     print('Model saved!')
                     
-                if epoch == 30:
+                if epoch == 10:
                     self.optimizer.param_groups[0]['lr'] = self.cfg.learning_rate * 0.1
                     print(f"Decrease decoder learning rate to {self.optimizer.param_groups[0]['lr']}!")
 
