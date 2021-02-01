@@ -19,7 +19,7 @@ cfg = edict(
 
     # sampling config
     patchsize = 256,
-    num_patch_per_image = 10, #500
+    num_patch_per_image = 500, #500
     train_val_split_rate = 0.7,
     random_state = 42,
 
@@ -31,13 +31,13 @@ cfg = edict(
     BATCH_SIZE = 32,
 
     max_score = 0, # IoU
-    max_epoch = 2,
+    max_epoch = 30,
     size_of_train = 3072,
 
     # loss
     gamma = 1, # dice
     alpha = 0.5, # focal
-    beta = 2e-5, # tv
+    beta = 0, # tv
 
     ref_mode = 'SAR', # 'SAR', 'Opt', 'optSAR'
     
