@@ -18,7 +18,7 @@ cfg = edict(
 
     # sampling config
     patchsize = 256,
-    num_patch_per_image = 100, #500
+    num_patch_per_image = 500, #500
     train_val_split_rate = 0.7,
     random_state = 42,
 
