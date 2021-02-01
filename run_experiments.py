@@ -18,7 +18,7 @@ from config.configuration import cfg
 
 """ Data Sampling """
 data_sampler = DataSampler(cfg)
-# data_sampler()
+data_sampler()
 # cfg.data_sampler = data_sampler
 
 """ Change Configuration """

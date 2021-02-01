@@ -18,7 +18,7 @@ interval_95 = PercentileInterval(95.0)
 
 # progression path
 transfer_dataset = {
-        # 'CAL_Creek': ['CAL_Creek_ref_20200928T18_S2', '20200926T01_ASC64'],
+        'CAL_Creek': ['CAL_Creek_ref_20200928T18_S2', '20200926T01_ASC64'],
         # 'AugustComplex': ['AugustComplex_ref_20200929T19_S2', '20200930T02_ASC35'],
         # 'elephant': ['elephant_20171003T19_S2_optRef', '20170930T01_ASC64'],
         # 'Sydney': ['Sydney_20191231T00_S2_optRef', '20191227T08_ASC9'],
@@ -38,13 +38,13 @@ transfer_dataset = {
         # # 'ChristieMountain': ['xx', 'xx'],
         # # 'TalbottCreek': ['xx', 'xx'],
         
-        'Chuckegg': ['Chuckegg_20190806T19_S2_optRef', 'Chuckegg_20190818T01_ASC20'],
-        'BC2018R12068': ['R12068_20181004T19_S2_optRef', 'R12068_20180831T14_DSC57'],
-        'BC2018R91947': ['R91947_20180918T19_L8_optRef', 'R91947_20180922T02_ASC108'],
-        'BC2018G41607': ['G41607_20180929T19_S2_optRef', 'G41607_20180919T14_DSC159'],
-        'BC2018G80340': ['G80340_20180726T19_S2_optRef', 'G80340_20180621T01_ASC64'],
-        'BC2018G82215': ['G82215_20180921T19_S2_optRef', 'G82215_20180914T01_ASC166'],
-        'BC2018VA1787': ['VA1787_20180929T19_S2_optRef', 'VA1787_20180907T14_DSC159'],
+        # 'Chuckegg': ['Chuckegg_20190806T19_S2_optRef', 'Chuckegg_20190818T01_ASC20'],
+        # 'BC2018R12068': ['R12068_20181004T19_S2_optRef', 'R12068_20180831T14_DSC57'],
+        # 'BC2018R91947': ['R91947_20180918T19_L8_optRef', 'R91947_20180922T02_ASC108'],
+        # 'BC2018G41607': ['G41607_20180929T19_S2_optRef', 'G41607_20180919T14_DSC159'],
+        # 'BC2018G80340': ['G80340_20180726T19_S2_optRef', 'G80340_20180621T01_ASC64'],
+        # 'BC2018G82215': ['G82215_20180921T19_S2_optRef', 'G82215_20180914T01_ASC166'],
+        # 'BC2018VA1787': ['VA1787_20180929T19_S2_optRef', 'VA1787_20180907T14_DSC159'],
         
         
         # 'BC2017C50647': ['C50647_20171003T19_S2_optRef', 'C50647_20170826T14_DSC86'],

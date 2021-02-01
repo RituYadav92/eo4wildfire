@@ -17,10 +17,15 @@ class DataSampler:
         self.cfg = cfg
 
         self.data_folder = Path(cfg.data_folder)
-        self.trainPath = self.data_folder / "Historical_Wildfire_Dataset" 
+        self.trainPath = self.data_folder #/ "Historical_Wildfire_Dataset" 
         self.dataPath = self.trainPath / cfg.input_folder
         # self.patchPath = self.data_folder / f"patch_samples_{cfg.num_patch_per_image}_perImg_Nov15"
-        self.patchPath = self.data_folder / f"patch_samples_{cfg.num_patch_per_image}_perImg_BC"
+
+        self.sampleFolder = Path(self.cfg.project_dir) / "Sampled_Patches"
+        if not os.path.exists(self.sampleFolder): 
+            os.mkdir(self.sampleFolder)
+        self.firename = os.path.split(self.cfg.data_folder)[-1].split("_")[0]
+        self.patchPath = self.sampleFolder / f"{self.firename}_patch_samples_{cfg.num_patch_per_image}_perImg"
 
         self.train = edict()
         self.train.patchDir = self.patchPath / f'trainPatches_{self.cfg.patchsize}'
@@ -170,9 +175,14 @@ class NRT_DataSampler:
         self.data_folder = Path(cfg.nrt_data_folder)
         self.trainPath = self.data_folder #/ "A0_Progression_PNG" 
         self.dataPath = self.trainPath / cfg.input_folder
+
+        self.sampleFolder = Path(self.cfg.project_dir) / "Sampled_Patches"
+        if not os.path.exists(Path(self.sampleFolder) / "Sampled_Patches"): 
+            os.mkdir(Path(self.sampleFolder) / "Sampled_Patches")
+
         # self.patchPath = self.data_folder / f"patch_samples_{cfg.num_patch_per_image}_perImg_Nov15"
         self.firename = os.path.split(self.cfg.nrt_data_folder)[-1].split("_")[0]
-        self.patchPath = Path(self.cfg.project_dir) / "Sampled_Patches" / f"{self.firename}_patch_samples_{cfg.num_patch_per_image}_perImg"
+        self.patchPath = self.sampleFolder / f"{self.firename}_patch_samples_{cfg.num_patch_per_image}_perImg"
 
         self.train = edict()
         self.train.patchDir = self.patchPath / f'trainPatches_{self.cfg.patchsize}'
@@ -199,8 +209,8 @@ class NRT_DataSampler:
         else:
             pass
 
-        SAR_ref = imread(self.trainPath / f"A1_SAR_Pseudo_Masks" / f"{tifName}_sarRef.png") / 255.0
-        optSAR_ref = imread(self.trainPath / f"A2_OptSAR_Pseudo_Masks" / f"{tifName}_optSAR.png") / 255.0
+        SAR_ref = imread(glob.glob(str(self.trainPath / f"A1_SAR_Pseudo_Masks" / f"{tifName}*.png"))[0]) / 255.0
+        optSAR_ref = imread(glob.glob(str(self.trainPath / f"A2_OptSAR_Pseudo_Masks" / f"{tifName}*.png"))[0]) / 255.0
 
         prefix = tifName.split('_20')[0]
         opt_ref_url = glob.glob(str(self.trainPath / f"A3_Opt_Reference_Masks" / f"{prefix}*optRef.png"))[0]
@@ -268,7 +278,7 @@ class NRT_DataSampler:
         else:
             pass
 
-        SAR_ref = imread(self.trainPath / f"A0_Progression_Masks" / f"{tifName}_sarRef.png") / 255.0
+        SAR_ref = imread(glob.glob(str(self.trainPath / f"A0_Progression_Masks" / f"{tifName}*.png"))[0]) / 255.0
         # print(f"SAR_ref: ", np.unique(SAR_ref))
 
         if len(SAR_ref.shape) > 2: # add on Nov-24-2020, for handle with 3-channel ref

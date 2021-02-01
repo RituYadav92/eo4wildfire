@@ -69,8 +69,8 @@ class SegModel:
         self.time_now = (datetime.now() + timedelta(hours=1)).strftime("%Y%m%dT%H%M%S")
         self.cfg = cfg
 
-        # self.expmPath = Path(cfg.project_dir) / 'Experiments'
-        self.expmPath = Path(cfg.data_folder) / 'Experiments'
+        self.expmPath = Path(cfg.project_dir) / 'Experiments_TV'
+        # self.expmPath = Path(cfg.data_folder) / 'Experiments'
         if not os.path.exists(self.expmPath): os.mkdir(self.expmPath)
         self.savePath = self.expmPath / f"{self.time_now}_{cfg.ref_mode}_{cfg.ARCH}_{cfg.ENCODER}_a_{cfg.alpha}_b_{cfg.beta}_trainSize_{cfg.size_of_train}"
         self.model_url = str(self.savePath / 'best_model.pth')

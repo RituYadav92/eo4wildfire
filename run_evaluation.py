@@ -17,12 +17,12 @@ import os, json
 from config.configuration import cfg
 cfg0 = cfg
 
-project_dir = Path("/content/drive/My Drive/A_Wildfire_Projects/TV_SegModel_PNG")
+project_dir = Path("/content/drive/My Drive/A_Wildfire_Projects/EO4Wildfire_Project")
 Experiments_dir = project_dir / f"BC_Wildfire_Data" / "Experiments"
 # Experiments_dir = project_dir / f"Data" / "Experiments"
 
 # project_dir / f"BC_Wildfire_Data" / "Experiments", 
-for Experiments_dir in [project_dir / f"Data" / "Experiments"]:
+for Experiments_dir in [project_dir / f"Experiments_TV"]:
     for folder in sorted(list(os.listdir(Experiments_dir))):
         print(folder)
     # for folder in [
