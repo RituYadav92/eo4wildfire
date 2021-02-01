@@ -37,7 +37,7 @@ cfg = edict(
     # loss
     gamma = 1, # dice
     alpha = 0.5, # focal
-    beta = 0, # tv
+    beta = 2e-5, # tv
 
     ref_mode = 'SAR', # 'SAR', 'Opt', 'optSAR'
     
