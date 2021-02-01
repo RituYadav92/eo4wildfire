@@ -11,7 +11,7 @@ project_dir = Path(os.getcwd())
 cfg = edict(
     project_dir = str(project_dir),
     # data_folder = str(project_dir / "BC_Wildfire_Data"),
-    nrt_data_folder = str(project_dir / "Data/Temporal_Progressions_Data/FraserIsland_Progression_Data_20m"),
+    nrt_data_folder = str(project_dir / "Data/Temporal_Progressions_Data/CAL_Creek_Progression_Data_20m"),
 
     # PNG
     input_folder = "A0_Progression_PNG", 
@@ -39,7 +39,7 @@ cfg = edict(
     alpha = 0.5, # focal
     beta = 2e-5, # tv
 
-    ref_mode = 'SAR', # 'SAR', 'Opt', 'optSAR'
+    ref_mode = 'SARREF', #'SARREF', 'OptSAR', 'OptREF'
     
     ENCODER_WEIGHTS = 'imagenet',
     ACTIVATION = 'sigmoid', # could be None for logits or 'softmax2d' for multicalss segmentation
@@ -56,7 +56,7 @@ print("data_sampler")
 data_sampler()
 cfg.data_sampler = data_sampler
 
-for ref_mode in ['SAR']:
+for ref_mode in ['SARREF']:  #'SARREF', 'OptSAR', 'OptREF'
     cfg.ref_mode = ref_mode
 
     pprint(cfg)

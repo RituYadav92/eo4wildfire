@@ -177,8 +177,8 @@ class NRT_DataSampler:
         self.dataPath = self.trainPath / cfg.input_folder
 
         self.sampleFolder = Path(self.cfg.project_dir) / "Sampled_Patches"
-        if not os.path.exists(Path(self.sampleFolder) / "Sampled_Patches"): 
-            os.mkdir(Path(self.sampleFolder) / "Sampled_Patches")
+        if not os.path.exists(self.sampleFolder): 
+            os.mkdir(self.sampleFolder)
 
         # self.patchPath = self.data_folder / f"patch_samples_{cfg.num_patch_per_image}_perImg_Nov15"
         self.firename = os.path.split(self.cfg.nrt_data_folder)[-1].split("_")[0]
