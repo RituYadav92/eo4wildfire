@@ -1,6 +1,6 @@
 # eo4wildfire project
 
-+++ Data (https://drive.google.com/drive/folders/1RkCycJrmKSOlbK10LdY-B07Z6Hf2gehT?usp=sharing)
++++ Data 
 
 ------ Historical_Wildfire_Dataset (For offline model training)
 ---------- BC_SAR4Wildfire_Dataset
